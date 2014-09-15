@@ -2,7 +2,7 @@
  * File Name : main.c
  * Purpose : Blink an LED
  * Creation Date : 01-05-2013
- * Last Modified : mån 15 sep 2014 23:06:47
+ * Last Modified : mån 15 sep 2014 23:47:50
  * Created By : Gabriel Fornaeus, <gf@hax0r.se>
  *
  */
@@ -10,7 +10,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdio.h>
-#include "lib/interrupts.h"
+#include "lib/encoders.h"
 #include "lib/hd44780.h"
 
 int main (void) {
