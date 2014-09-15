@@ -2,19 +2,16 @@
  * File Name : main.c
  * Purpose : Blink an LED
  * Creation Date : 01-05-2013
- * Last Modified : mån 15 sep 2014 22:55:41
+ * Last Modified : mån 15 sep 2014 23:02:26
  * Created By : Gabriel Fornaeus, <gf@hax0r.se>
  *
  */
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include <avr/interrupt.h>
 #include <stdio.h>
+#include "lib/interrupts.h"
 #include "lib/hd44780.h"
-
-// Encoder value, updated via ISR
-unsigned int encoderValue = 0;
 
 int main (void) {
 	cli();
@@ -32,15 +29,7 @@ int main (void) {
 	PORTD |= (1 << PD2);
 	PORTD |= (1 << PD3);
 
-	// Interrupt on change 
-	PCMSK &= ~(1 << PIND2);
-	PCMSK &= ~(1 << PIND1);
-	MCUCR &= ~(1 << ISC00);
-	MCUCR |= (1 << ISC01);
-	MCUCR &= ~(1 << ISC10);
-	MCUCR |= (1 << ISC11);
-	GIMSK |= (1 << INT0);
-	//GIMSK |= (1 << INT1);
+	initInterrupts();
 	sei();
 	char string[16];
 	// Go to zero position
@@ -56,24 +45,4 @@ int main (void) {
 	}
 }
 
-ISR(INT0_vect) {
-	if(PIND & (1 <<PD3)){
-		encoderValue--;
-		PORTD |= (1 << PD5);
-	} else
-	{
-		encoderValue++;
-		PORTD &= ~(1 << PD5);
-	}}
-/*
-ISR(INT1_vect) {
-	if(PIND & (1 <<PD3)){
-		encoderValue--;
-		PORTD |= (1 << PD5);
-	} else
-	{
-		encoderValue++;
-		PORTD &= ~(1 << PD5);
-	}
-}
-*/
+

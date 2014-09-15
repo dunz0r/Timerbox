@@ -2,12 +2,14 @@
  * File Name : interrupts.c
  * Purpose :
  * Creation Date : 15-09-2014
- * Last Modified : mån 15 sep 2014 23:00:17
+ * Last Modified : mån 15 sep 2014 23:02:19
  * Created By : Gabriel Fornaeus, <gf@hax0r.se>
  *
  */
 
 #include "interrupts.h"
+
+volatile unsigned int encoderValue = 0;
 
 void initInterrupts(void) {
 	// Interrupt on change 
