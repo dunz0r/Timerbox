@@ -2,7 +2,7 @@
  * File Name : main.c
  * Purpose : Blink an LED
  * Creation Date : 01-05-2013
- * Last Modified : mån 15 sep 2014 22:43:21
+ * Last Modified : mån 15 sep 2014 22:55:41
  * Created By : Gabriel Fornaeus, <gf@hax0r.se>
  *
  */
@@ -11,7 +11,7 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include <stdio.h>
-#include "hd44780.h"
+#include "lib/hd44780.h"
 
 // Encoder value, updated via ISR
 unsigned int encoderValue = 0;
