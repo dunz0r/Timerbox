@@ -2,7 +2,7 @@
  * File Name : main.c
  * Purpose : Blink an LED
  * Creation Date : 01-05-2013
- * Last Modified : mån 15 sep 2014 23:02:26
+ * Last Modified : mån 15 sep 2014 23:06:47
  * Created By : Gabriel Fornaeus, <gf@hax0r.se>
  *
  */
@@ -14,6 +14,7 @@
 #include "lib/hd44780.h"
 
 int main (void) {
+	// Clear interrupts during setup phase
 	cli();
 	lcd_init();
 	lcd_clrscr();
@@ -29,8 +30,10 @@ int main (void) {
 	PORTD |= (1 << PD2);
 	PORTD |= (1 << PD3);
 
+	// initialize and enale interrupts
 	initInterrupts();
 	sei();
+
 	char string[16];
 	// Go to zero position
 	lcd_gotoxy(0,0);
