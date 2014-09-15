@@ -253,8 +253,8 @@ static void lcd_waitbusy(void)
 {
 	register uint8_t c;
 	unsigned int ul1=0;
-
-	while ( ((c=lcd_read(0)) & (1<<LCD_BUSY)) && ul1<((F_CPU/16384>=16)?F_CPU/16384:16))     // Wait Until Busy Flag is Cleared
+	// Wait Until Busy Flag is Cleared
+	while ( ((c=lcd_read(0)) & (1<<LCD_BUSY)) && ul1<((F_CPU/16384>=16)?F_CPU/16384:16))
 		ul1++;
 }
 #endif
