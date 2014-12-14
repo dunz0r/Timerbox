@@ -10,9 +10,10 @@
 volatile unsigned int buttonValue = 0;
 
 void initInterrupts(void) {
+	// Turn on pullups
+	PCMSK |= (1 << PIND2);
+	PCMSK |= (1 << PIND1);
 	// Interrupt on low
-	PCMSK &= ~(1 << PIND2);
-	PCMSK &= ~(1 << PIND1);
 	MCUCR &= ~(1 << ISC00);
 	MCUCR &= ~(1 << ISC01);
 	MCUCR &= ~(1 << ISC10);
