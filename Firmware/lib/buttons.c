@@ -8,12 +8,12 @@
 #include "buttons.h"
 
 volatile unsigned int buttonValue = 0;
+char string[16];
 
 void initInterrupts(void) {
-	// Turn on pullups
-	PCMSK |= (1 << PIND2);
-	PCMSK |= (1 << PIND1);
 	// Interrupt on low
+	PCMSK &= ~(1 << PIND2);
+	PCMSK &= ~(1 << PIND1);
 	MCUCR &= ~(1 << ISC00);
 	MCUCR &= ~(1 << ISC01);
 	MCUCR &= ~(1 << ISC10);
@@ -24,9 +24,20 @@ void initInterrupts(void) {
 }
 
 ISR(INT0_vect) {
-	if(buttonValue > 0)
+	if(buttonValue > 0) {
+		_delay_ms(200);
+		lcd_clrscr();
 		buttonValue--;
+		sprintf(string, ":%d", buttonValue);
+		lcd_gotoxy(0,0);
+		lcd_puts(string);
+	}
 }
 ISR(INT1_vect) {
+	_delay_ms(200);
+	lcd_clrscr();
 	buttonValue++;
+	sprintf(string, ":%d", buttonValue);
+	lcd_gotoxy(0,0);
+	lcd_puts(string);
 }

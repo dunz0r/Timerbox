@@ -35,16 +35,12 @@ int main (void) {
 	initInterrupts();
 	sei();
 
-	char string[16];
 	// Go to zero position
 	lcd_gotoxy(0,0);
-	_delay_ms(100);
+	_delay_ms(1000);
+	lcd_clrscr();
 	for(;;) {
-		sprintf(string, ":%d", buttonValue);
-		//PORTD ^= (1 << PD5);
-		lcd_clrscr();
-		lcd_gotoxy(0,0);
-		lcd_puts(string);
+		PORTD ^= (1 << PD5);
 		_delay_ms(200);
 	}
 }

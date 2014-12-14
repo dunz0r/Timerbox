@@ -10,8 +10,12 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/delay.h>
+#include <stdio.h>
+#include "hd44780.h"
 
 volatile unsigned int buttonValue;
+char string[16];
 
 void initInterrupts(void);
 
