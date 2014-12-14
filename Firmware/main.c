@@ -9,8 +9,9 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
 #include <stdio.h>
-#include "lib/encoders.h"
+#include "lib/buttons.h"
 #include "lib/hd44780.h"
 
 int main (void) {
@@ -39,7 +40,7 @@ int main (void) {
 	lcd_gotoxy(0,0);
 	_delay_ms(100);
 	for(;;) {
-		sprintf(string, ":%d", encoderValue);
+		sprintf(string, ":%d", buttonValue);
 		//PORTD ^= (1 << PD5);
 		lcd_clrscr();
 		lcd_gotoxy(0,0);
