@@ -1,6 +1,6 @@
-update=mån  4 aug 2014 21:19:52
+update=Sat 25 Apr 2015 16:48:23 CEST
 version=1
-last_client=cvpcb
+last_client=pcbnew
 [general]
 version=1
 [eeschema]
@@ -101,26 +101,32 @@ LibName83=ttl_ieee
 LibName84=video
 LibName85=g5v2
 LibName86=srd48
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [pcbnew]
 version=1
 LastNetListRead=
 UseCmpFile=1
-PadDrill="    1,016000"
-PadDrillOvalY="    1,016000"
-PadSizeH="    3,084000"
-PadSizeV="    1,524000"
-PcbTextSizeV="    1,000000"
-PcbTextSizeH="    1,000000"
-PcbTextThickness="    0,300000"
-ModuleTextSizeV="    1,000000"
-ModuleTextSizeH="    1,000000"
-ModuleTextSizeThickness="    0,150000"
-SolderMaskClearance="    0,000000"
-SolderMaskMinWidth="    0,000000"
-DrawSegmentWidth="    0,200000"
-BoardOutlineThickness="    0,150000"
-ModuleOutlineThickness="    0,150000"
+PadDrill="    3.000000"
+PadDrillOvalY="    3.000000"
+PadSizeH="    5.600700"
+PadSizeV="    5.600700"
+PcbTextSizeV="    1.000000"
+PcbTextSizeH="    1.000000"
+PcbTextThickness="    0.300000"
+ModuleTextSizeV="    1.000000"
+ModuleTextSizeH="    1.000000"
+ModuleTextSizeThickness="    0.150000"
+SolderMaskClearance="    0.000000"
+SolderMaskMinWidth="    0.000000"
+DrawSegmentWidth="    0.200000"
+BoardOutlineThickness="    0.150000"
+ModuleOutlineThickness="    0.150000"
 [pcbnew/libraries]
+LibDir=
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -172,9 +178,4 @@ LibName48=muonde
 LibName49=powerint
 LibName50=/home/gabriel/Documents/Circuits/lib/6W_resistor
 LibName51=/home/gabriel/Documents/Circuits/mod/srd48
-LibDir=
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
+LibName52=mod-hole
