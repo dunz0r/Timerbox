@@ -85,14 +85,13 @@ LIBS:ttl_ieee
 LIBS:video
 LIBS:g5v2
 LIBS:srd48
-LIBS:Timerbox-cache
 EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Temperature sensor board"
-Date "2 dec 2014"
+Date "3 may 2015"
 Rev "0.1"
 Comp "Hackoteket"
 Comment1 "Gabriel Fornaeus"
@@ -692,18 +691,6 @@ F 3 "" H 6950 2900 60  0000 C CNN
 	1    6950 2900
 	0    -1   -1   0   
 $EndComp
-$Comp
-L POT RV1
-U 1 1 53A2327B
-P 9475 6325
-F 0 "RV1" H 9475 6225 50  0000 C CNN
-F 1 "10k" H 9475 6325 50  0000 C CNN
-F 2 "~" H 9475 6325 60  0000 C CNN
-F 3 "~" H 9475 6325 60  0000 C CNN
-	1    9475 6325
-	0    -1   1    0   
-$EndComp
-NoConn ~ 9475 6575
 Text Label 5925 3650 0    60   ~ 0
 BTN0
 Text Label 6125 4500 2    60   ~ 0
@@ -768,6 +755,19 @@ F 3 "" H 8725 2875 60  0000 C CNN
 	1    8725 2875
 	0    -1   -1   0   
 $EndComp
+Text Label 8725 3600 0    60   ~ 0
+BTN5
+$Comp
+L POT RV1
+U 1 1 53A2327B
+P 9475 6325
+F 0 "RV1" H 9475 6225 50  0000 C CNN
+F 1 "10k" H 9475 6325 50  0000 C CNN
+F 2 "~" H 9475 6325 60  0000 C CNN
+F 3 "~" H 9475 6325 60  0000 C CNN
+	1    9475 6325
+	0    -1   1    0   
+$EndComp
 Wire Wire Line
 	2500 4600 3050 4600
 Wire Wire Line
@@ -823,15 +823,7 @@ Wire Wire Line
 Wire Wire Line
 	9650 6100 9650 6125
 Wire Wire Line
-	9650 6125 10050 6125
-Wire Wire Line
-	10050 6025 9725 6025
-Wire Wire Line
-	9725 6025 9725 5925
-Wire Wire Line
-	9725 5925 9475 5925
-Wire Wire Line
-	9475 6625 9475 6775
+	9525 6125 10050 6125
 Wire Wire Line
 	4400 2850 4400 2600
 Wire Wire Line
@@ -1005,12 +997,6 @@ Wire Wire Line
 Wire Wire Line
 	4125 3250 3800 3250
 Wire Wire Line
-	9475 5925 9475 6075
-Wire Wire Line
-	9475 6625 9325 6625
-Wire Wire Line
-	9325 6625 9325 6325
-Wire Wire Line
 	5900 5350 5900 5200
 Connection ~ 5900 5200
 Wire Wire Line
@@ -1058,8 +1044,6 @@ Wire Wire Line
 	8625 3225 8625 3600
 Wire Wire Line
 	8625 3600 8725 3600
-Text Label 8725 3600 0    60   ~ 0
-BTN5
 Wire Wire Line
 	8825 3225 8825 3375
 Wire Wire Line
@@ -1068,4 +1052,19 @@ Wire Wire Line
 	9075 3375 9075 3750
 Wire Wire Line
 	9075 3750 8000 3750
+Wire Wire Line
+	9475 6775 9475 6575
+Wire Wire Line
+	9525 6125 9525 6075
+Wire Wire Line
+	9525 6075 9475 6075
+Connection ~ 9650 6125
+Wire Wire Line
+	9325 6325 9325 5975
+Wire Wire Line
+	9325 5975 9850 5975
+Wire Wire Line
+	9850 5975 9850 6025
+Wire Wire Line
+	9850 6025 10050 6025
 $EndSCHEMATC
